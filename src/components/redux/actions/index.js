@@ -8,12 +8,10 @@ export const addToFavourites = (selectedCompany) => {
    };
 };
 
-export const addToSearched = (searched) => {
+export const addToSearched = (url, querry, limit) => {
    return async (dispatch) => {
       try {
-         let res = await fetch(
-            "https://strive-benchmark.herokuapp.com/api/jobs?search=" + searched
-         );
+         let res = await fetch(`${url}${querry}${limit}`);
          if (res.ok) {
             let fetchedSearch = await res.json();
             dispatch({

@@ -1,7 +1,9 @@
 import { ADD_TO_SEARCHED } from "../actions";
 
 const initialState = {
-   searched: [],
+   searchedList: {
+      data: [],
+   },
 };
 
 const searchReducer = (state = initialState, action) => {
@@ -9,7 +11,7 @@ const searchReducer = (state = initialState, action) => {
       case ADD_TO_SEARCHED:
          return {
             ...state,
-            searched: action.payload,
+            searchedList: action.payload,
          };
 
       default:
